@@ -58,5 +58,4 @@ if __name__=='__main__':
     number = find_no_of_columns(url)
     print("(+) number of columns : %s" %number)
     s = requests.session()
-
     exploit_sql_injection(s, url)
