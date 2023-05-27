@@ -1,0 +1,5 @@
+lab 5
+
+SQL Injection : product category filter
+end goal : log in as the administrator
+infoemations given : table - users, coluns- username,password 
